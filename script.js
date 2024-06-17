@@ -13,7 +13,7 @@ function handleImage(event) {
 
     img.onload = function() {
         const baseImg = new Image();
-        baseImg.src = 'path/to/your/base/art.png'; // Substitua com o caminho da sua arte base
+        baseImg.src = 'https://github.com/BotacinDesign/Edmar/blob/main/base_art.png'; // Substitua com o caminho da sua arte base
 
         baseImg.onload = function() {
             canvas.width = baseImg.width;
