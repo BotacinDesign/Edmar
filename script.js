@@ -19,12 +19,19 @@ function handleImage(event) {
             canvas.width = baseImg.width;
             canvas.height = baseImg.height;
 
-            ctx.drawImage(baseImg, 0, 0);
+            // Desenhe a imagem carregada pelo usuário primeiro
             const ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
             const newWidth = img.width * ratio;
             const newHeight = img.height * ratio;
 
-            ctx.drawImage(img, (canvas.width - newWidth) / 2, (canvas.height - newHeight) / 2, newWidth, newHeight);
+            // Centralize a imagem carregada pelo usuário
+            const x = (canvas.width - newWidth) / 2;
+            const y = (canvas.height - newHeight) / 2;
+
+            ctx.drawImage(img, x, y, newWidth, newHeight);
+
+            // Desenhe a imagem base em cima
+            ctx.drawImage(baseImg, 0, 0);
         }
     }
 
