@@ -1,4 +1,15 @@
 document.getElementById('upload').addEventListener('change', handleImage, false);
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    // Aqui você pode redesenhar as imagens conforme necessário
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Chame a função uma vez para ajustar inicialmente o canvas
 
 function handleImage(event) {
     const file = event.target.files[0];
