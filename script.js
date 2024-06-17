@@ -47,6 +47,18 @@ function handleImage(event) {
     }
 
     reader.readAsDataURL(file);
+const downloadButton = document.getElementById('download');
+downloadButton.addEventListener('click', function() {
+    const canvas = document.getElementById('canvas');
+    const dataURL = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = dataURL;
+    link.download = 'imagem.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+v
 
     const downloadButton = document.getElementById('download');
     downloadButton.onclick = function() {
