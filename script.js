@@ -13,7 +13,7 @@ function handleImage(event) {
 
     img.onload = function() {
         const baseImg = new Image();
-        baseImg.src = 'https://github.com/BotacinDesign/Edmar/raw/main/base_art.png'; // URL corrigida
+        baseImg.src = 'https://github.com/BotacinDesign/Edmar/raw/main/base_art.png'; 
 
         baseImg.onload = function() {
             canvas.width = baseImg.width;
